@@ -107,13 +107,13 @@ test_db=# GRANT SELECT,INSERT,UPDATE,DELETE ON TABLE clients TO test_simple_user
 ```
 - итоговый список БД после выполнения пунктов выше.
 
-![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/image/1.png)
+![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/img/1.png)
 
 - описание таблиц (describe)
 
-![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/image/2.png)
+![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/img/2.png)
 
-![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/image/3.png)
+![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/img/3.png)
 
 - SQL-запрос для выдачи списка пользователей с правами над таблицами test_db
 
@@ -121,7 +121,7 @@ test_db=# GRANT SELECT,INSERT,UPDATE,DELETE ON TABLE clients TO test_simple_user
 test_db=# SELECT grantee, table_catalog, table_name, privilege_type FROM information_schema.table_privileges WHERE table_name IN ('orders','clients');
 ```
 
-![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/image/4.png)
+![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/img/4.png)
 
 
 ## Задача 3
@@ -162,7 +162,7 @@ SELECT COUNT (*) FROM orders;
 SELECT COUNT (*) FROM clients;
 ```
 
-![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/image/5.png)
+![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/img/5.png)
 
 ## Задача 4 
 
@@ -188,14 +188,14 @@ test_db=# UPDATE clients SET заказ=(select id from orders where наиме�
 SELECT * FROM clients WHERE заказ IS NOT NULL;
 
 
-![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/image/6.png)
+![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/img/6.png)
 
 
 ## Задача 5
 
 ### Получите полную информацию по выполнению запроса выдачи всех пользователей из задачи 4 (используя директиву EXPLAIN).
 
-![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/image/7.png)
+![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/img/7.png)
 
 ### Приведите получившийся результат и объясните что значат полученные значения.
 
@@ -213,7 +213,7 @@ root@28d7ec20b83e:/# pg_dump -U solovev test_db > /home/backup/test_db.backup
 Остановите контейнер с PostgreSQL (но не удаляйте volumes).
 
 
-![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/image/8.png)
+![Ссылка 1](https://github.com/dsolovev455/06-db-02-sql/blob/main/img/8.png)
 
 
 Поднимите новый пустой контейнер с PostgreSQL.
